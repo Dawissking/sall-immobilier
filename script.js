@@ -301,6 +301,125 @@ function attachLeadForms() {
   });
 }
 
+function initServiceBanner() {
+  const banner = document.querySelector("[data-service-banner]");
+  if (!banner) return;
+
+  const slides = Array.from(banner.querySelectorAll("[data-service-slide]"));
+  const dots = Array.from(banner.querySelectorAll("[data-service-dot]"));
+  const previousButton = banner.querySelector("[data-service-prev]");
+  const nextButton = banner.querySelector("[data-service-next]");
+  const toggleButton = banner.querySelector("[data-service-toggle]");
+  const intervalDelay = 5000;
+  let activeIndex = 0;
+  let isPaused = false;
+  let rotationTimer;
+
+  function showSlide(index) {
+    activeIndex = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+    if (!isPaused) {
+      restartRotation();
+    }
+  }
+
+  function setPaused(paused) {
+    isPaused = paused;
+    toggleButton?.setAttribute("aria-pressed", String(paused));
+    toggleButton?.setAttribute(
+      "aria-label",
+      paused ? "Reprendre le défilement" : "Suspendre le défilement",
+    );
+    if (toggleButton) {
+      toggleButton.textContent = paused ? "Reprendre" : "Pause";
+    }
+  }
+
+  function pauseRotation() {
+    stopRotation();
+    setPaused(true);
+  }
+
+  function resumeRotation() {
+    setPaused(false);
+    startRotation();
+  }
+
+  function startRotation() {
+    if (rotationTimer || slides.length < 2) return;
+    rotationTimer = window.setInterval(() => {
+      showSlide(activeIndex + 1);
+    }, intervalDelay);
+  }
+
+  function stopRotation() {
+    window.clearInterval(rotationTimer);
+    rotationTimer = undefined;
+  }
+
+  function restartRotation() {
+    stopRotation();
+    startRotation();
+  }
+
+  previousButton?.addEventListener("click", () => goToSlide(activeIndex - 1));
+  nextButton?.addEventListener("click", () => goToSlide(activeIndex + 1));
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => goToSlide(dotIndex));
+  });
+
+  banner.addEventListener("mouseenter", stopRotation);
+  banner.addEventListener("mouseleave", () => {
+    if (!isPaused) {
+      startRotation();
+    }
+  });
+  banner.addEventListener("focusin", stopRotation);
+  banner.addEventListener("focusout", (event) => {
+    if (!banner.contains(event.relatedTarget) && !isPaused) {
+      startRotation();
+    }
+  });
+  toggleButton?.addEventListener("click", () => {
+    if (isPaused) {
+      resumeRotation();
+    } else {
+      pauseRotation();
+    }
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopRotation();
+    } else if (!isPaused) {
+      startRotation();
+    }
+  });
+
+  showSlide(0);
+  setPaused(false);
+  startRotation();
+}
+
 /* ── Initialisation ────────────────────────────────────────── */
 renderHeader();
 renderFooter();
@@ -308,3 +427,4 @@ renderListings();
 renderArticles();
 setDynamicLinks();
 attachLeadForms();
+initServiceBanner();

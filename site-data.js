@@ -4,9 +4,9 @@ window.siteData = {
     tagline: "Un Malien, un titre foncier",
     description:
       "Sall Immobilier accompagne les particuliers et investisseurs dans la recherche de terrains, maisons et logements sociaux au Mali avec une approche plus claire, plus rassurante et plus professionnelle.",
-    phoneDisplay: "+223 78 23 70 07",
-    phoneDial: "+22378237007",
-    whatsappUrl: "https://wa.me/22378237007",
+    phoneDisplay: "+223 90 52 97 29",
+    phoneDial: "+22390529729",
+    whatsappUrl: "https://wa.me/22390529729",
     address: "Mali",
     social: {
       facebook: "https://facebook.com/sallimmobilier",

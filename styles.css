@@ -1197,6 +1197,167 @@ h1, h2, h3 {
   font-size: 1.1rem;
 }
 
+.services-banner {
+  padding: 24px 0 72px;
+}
+
+.services-banner-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 56px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(200, 151, 58, 0.18), rgba(13, 30, 61, 0.78)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.services-banner-card::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: -55%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 184, 75, 0.22), transparent 68%);
+}
+
+.services-banner-copy {
+  position: relative;
+  display: grid;
+  gap: 24px;
+}
+
+.services-banner-viewport {
+  display: grid;
+  min-height: 190px;
+}
+
+.service-slide {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(24px);
+  transition: opacity 500ms ease, transform 500ms ease, visibility 500ms ease;
+}
+
+.service-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.service-slide-kicker {
+  margin: 0 0 10px;
+  color: var(--gold-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-slide h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  line-height: 1.15;
+}
+
+.service-slide p:not(.service-slide-kicker) {
+  max-width: 62ch;
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.service-slide-link {
+  min-width: 170px;
+}
+
+.services-banner-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.services-banner-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel-alt);
+  color: var(--ink);
+  font-size: 1.45rem;
+  line-height: 1;
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform 180ms ease;
+}
+
+.services-banner-arrow:hover,
+.services-banner-arrow:focus-visible {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+  color: var(--gold-strong);
+  transform: translateY(-2px);
+}
+
+.services-banner-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.services-banner-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: transparent;
+  transition: width var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.services-banner-dot:hover,
+.services-banner-dot:focus-visible,
+.services-banner-dot.is-active {
+  width: 28px;
+  border-color: var(--gold-strong);
+  background: var(--gold-strong);
+}
+
+.services-banner-toggle {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-alt);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.88rem;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.services-banner-toggle:hover,
+.services-banner-toggle:focus-visible {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+  color: var(--gold-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-slide {
+    transition: none;
+  }
+}
+
 /* ── Animations ──────────────────────────────────────────────── */
 .fade-in {
   animation: rise 600ms ease both;
@@ -1307,6 +1468,32 @@ h1, h2, h3 {
 
   .hero {
     padding: 32px 0 16px;
+  }
+
+  .services-banner {
+    padding: 16px 0 56px;
+  }
+
+  .services-banner-card {
+    padding: 24px 18px;
+  }
+
+  .services-banner-viewport {
+    min-height: 300px;
+  }
+
+  .service-slide {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 18px;
+  }
+
+  .service-slide-link {
+    width: 100%;
+  }
+
+  .services-banner-controls {
+    justify-content: flex-start;
   }
 
   .hero-copy h1 {

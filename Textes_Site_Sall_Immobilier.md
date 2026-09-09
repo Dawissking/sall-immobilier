@@ -154,7 +154,7 @@ Vous avez une question, un besoin precis ou un projet en cours ? Notre equipe es
 
 ### Coordonnees
 
-- Telephone : 78 23 70 07
+- Telephone : +223 90 52 97 29
 - WhatsApp : disponible pour les demandes rapides
 - Adresse : a completer
 - Horaires : a completer
