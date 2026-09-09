@@ -97,6 +97,7 @@ body {
     radial-gradient(circle at 12% 55%, rgba(26, 58, 107, 0.22) 0%, transparent 26%);
   transition: background-color var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 [data-theme="light"] body {
@@ -288,8 +289,9 @@ button {
 .nav-overlay {
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 200;
   background: var(--panel);
+  background-color: var(--panel);
   display: flex;
   flex-direction: column;
   padding: 24px;
@@ -358,11 +360,11 @@ button {
 .nav-mobile a {
   display: flex;
   align-items: center;
-  padding: 14px 16px;
+  padding: 16px;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--ink);
   border: 1px solid transparent;
   transition: color var(--transition), background var(--transition), border-color var(--transition);
 }
@@ -491,6 +493,7 @@ h1, h2, h3 {
 /* ── Hero Section ────────────────────────────────────────────── */
 .hero {
   padding: 52px 0 24px;
+  overflow: hidden;
 }
 
 .hero-grid,
@@ -516,8 +519,9 @@ h1, h2, h3 {
 
 .page-hero h1 {
   margin: 0;
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .lead {
@@ -858,10 +862,6 @@ h1, h2, h3 {
 .page-grid {
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-}
-
-.page-hero h1 {
-  font-size: clamp(2.2rem, 5.5vw, 4rem);
 }
 
 .hero-aside {
@@ -1318,7 +1318,7 @@ h1, h2, h3 {
   }
 
   .page-hero h1 {
-    font-size: clamp(2rem, 9.5vw, 3.2rem);
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
   }
 
   .cta-shell {
