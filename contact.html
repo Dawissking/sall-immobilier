@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Sall Immobilier</title>
+    <meta
+      name="description"
+      content="Contactez Sall Immobilier par téléphone, WhatsApp ou formulaire pour parler de votre projet immobilier."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link rel="shortcut icon" href="Logo.png" />
+    <link rel="apple-touch-icon" href="Logo.png" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header" data-site-header></header>
+
+    <main>
+      <section class="page-hero">
+        <div class="shell page-grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h1>Parlons de votre projet immobilier.</h1>
+            <p class="lead">
+              Contactez Sall Immobilier par téléphone, WhatsApp ou message pour parler de votre
+              projet immobilier et obtenir un accompagnement rapide.
+            </p>
+          </div>
+          <aside class="hero-aside">
+            <h2>Comment nous joindre</h2>
+            <ul class="feature-list">
+              <li>Téléphone pour les échanges rapides</li>
+              <li>WhatsApp pour les demandes immédiates</li>
+              <li>Message pour décrire votre besoin</li>
+              <li>Accompagnement selon votre projet</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell contact-layout">
+          <div class="contact-card">
+            <h3>Coordonnées</h3>
+            <ul>
+              <li>Téléphone principal : 78 23 70 07</li>
+              <li>WhatsApp direct disponible</li>
+              <li>Intervention et accompagnement au Mali</li>
+              <li>Réponse rapide pour les demandes d'information et de visite</li>
+            </ul>
+            <div class="button-row">
+              <a class="button button-gold" href="tel:+22378237007">Appeler</a>
+              <a class="button button-outline" data-whatsapp-link href="#">WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="form-shell">
+            <p class="card-kicker">Message rapide</p>
+            <h2 class="panel-title">Parlez-nous de votre projet</h2>
+            <form class="lead-form" data-form-title="Demande de contact depuis le site">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="contact-nom">Nom complet</label>
+                  <input id="contact-nom" name="Nom complet" data-label="Nom complet" required placeholder="Votre nom complet" />
+                </div>
+                <div class="field">
+                  <label for="contact-telephone">Téléphone</label>
+                  <input id="contact-telephone" name="Téléphone" data-label="Téléphone" required placeholder="Votre numéro" />
+                </div>
+                <div class="field full">
+                  <label for="contact-besoin">Votre besoin</label>
+                  <select id="contact-besoin" name="Besoin" data-label="Besoin">
+                    <option value="Terrain">Terrain</option>
+                    <option value="Maison">Maison</option>
+                    <option value="Logement social">Logement social</option>
+                    <option value="Accompagnement immobilier">Accompagnement immobilier</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="contact-message">Message</label>
+                  <textarea id="contact-message" name="Message" data-label="Message" placeholder="Décrivez votre projet ou votre question"></textarea>
+                </div>
+              </div>
+              <button class="button button-gold" type="submit">Envoyer via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-site-footer></footer>
+    <a class="floating-whatsapp" data-whatsapp-link href="#">WhatsApp</a>
+
+    <script src="site-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demande de visite | Sall Immobilier</title>
+    <meta
+      name="description"
+      content="Faites une demande de visite à Sall Immobilier et transmettez rapidement vos besoins à l'agence."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link rel="shortcut icon" href="Logo.png" />
+    <link rel="apple-touch-icon" href="Logo.png" />
+  </head>
+  <body data-page="visite">
+    <header class="site-header" data-site-header></header>
+
+    <main>
+      <section class="page-hero">
+        <div class="shell page-grid">
+          <div>
+            <p class="eyebrow">Demande de visite</p>
+            <h1>Planifiez votre visite en quelques minutes.</h1>
+            <p class="lead">
+              Remplissez ce formulaire pour nous indiquer votre besoin. Notre équipe pourra vous
+              recontacter rapidement afin d'organiser la visite la plus adaptée à votre projet.
+            </p>
+          </div>
+          <aside class="hero-aside">
+            <h2>Une demande simple</h2>
+            <ul class="feature-list">
+              <li>Type de bien recherché</li>
+              <li>Zone et budget</li>
+              <li>Date souhaitée</li>
+              <li>Coordonnées du prospect</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell form-layout">
+          <div class="contact-card">
+            <h3>Un formulaire pensé pour aller à l'essentiel</h3>
+            <p>
+              Indiquez les informations principales de votre projet afin que nous puissions vous
+              orienter rapidement vers les meilleures options disponibles.
+            </p>
+            <ul class="contact-list">
+              <li>Formulaire rapide à remplir</li>
+              <li>Prise en charge plus fluide de votre demande</li>
+              <li>Réponse rapide de notre équipe</li>
+            </ul>
+          </div>
+
+          <div class="form-shell">
+            <p class="card-kicker">Formulaire</p>
+            <h2 class="panel-title">Préparer votre demande de visite</h2>
+            <form class="lead-form" data-form-title="Demande de visite depuis le site">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="nom">Nom complet</label>
+                  <input id="nom" name="Nom complet" data-label="Nom complet" required placeholder="Votre nom complet" />
+                </div>
+                <div class="field">
+                  <label for="telephone">Téléphone</label>
+                  <input id="telephone" name="Téléphone" data-label="Téléphone" required placeholder="Votre numéro" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" name="Email" data-label="Email" placeholder="Votre email" />
+                </div>
+                <div class="field">
+                  <label for="type-bien">Type de bien</label>
+                  <select id="type-bien" name="Type de bien" data-label="Type de bien">
+                    <option value="Terrain">Terrain</option>
+                    <option value="Maison">Maison</option>
+                    <option value="Logement social">Logement social</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="zone">Zone souhaitée</label>
+                  <input id="zone" name="Zone souhaitée" data-label="Zone souhaitée" placeholder="Ville ou quartier" />
+                </div>
+                <div class="field">
+                  <label for="budget">Budget</label>
+                  <input id="budget" name="Budget" data-label="Budget" placeholder="Budget indicatif" />
+                </div>
+                <div class="field full">
+                  <label for="date">Date souhaitée</label>
+                  <input id="date" type="date" name="Date souhaitée" data-label="Date souhaitée" />
+                </div>
+                <div class="field full">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="Message" data-label="Message" placeholder="Décrivez brièvement votre besoin"></textarea>
+                </div>
+              </div>
+              <p class="field-help">Après validation, votre demande sera transmise directement à notre équipe.</p>
+              <button class="button button-gold" type="submit">Envoyer via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-site-footer></footer>
+    <a class="floating-whatsapp" data-whatsapp-link href="#">WhatsApp</a>
+
+    <script src="site-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
